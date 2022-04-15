@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de país</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        h1 {
+            height: 50px;
+            width: 100vw;
+            padding: 10px;
+            line-height: 50px;
+        }
+
+        section {
+            padding: 10px;
+            margin: 10px;
+        }
+
+
+        input {
+            padding: 5px;
+            margin: 10px 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Testando sua nacionalidade</h1>
+    <section>
+        <p>Qual seu país de origem?</p>
+        <input type="text" name="txtpais" id="txtpais">
+        <input type="button" value="Verificar" onclick="test_nac()">
+        <div class="res_nac">
+            Resultado de nacionalidade
+        </div>
+    </section>
+    <script>
+        function test_nac() {
+            var tnac = window.document.getElementById('txtpais')
+            var dres = window.document.getElementsByClassName('res_nac')[0]
+            if (tnac.value == 'Brasil') {
+                dres.innerHTML = 'Você é Brasileiro!'
+            } else {
+                dres.innerHTML = 'Você é Extrangeiro!'
+            }
+        }
+    </script>
+</body>
+</html>
