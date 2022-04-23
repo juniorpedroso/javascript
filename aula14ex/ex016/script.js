@@ -1,14 +1,49 @@
 function contar() {
-    var tn1 = document.getElementById('txtn1')
-    var tn2 = document.getElementById('txtn2')
-    var tpass = document.getElementById('txtpass')
-    var res = document.getElementsByTagName('div')[1]
-    var n1 = Number(tn1.value)
-    var n2 = Number(tn2.value)
-    var n3 = Number(tpass.value)
-    var msg = ''
-    for(var c = n1; c <= n2; c + n3) {
-        msg = `${msg} -> ${n1}`
-        res.innerHTML = msg
+    var tini = document.getElementById('txt_ini')
+    var tfim = document.getElementById('txt_fim')
+    var tpass = document.getElementById('txt_pass')
+    var res = document.getElementById('res')
+
+    if (tini.value.length == 0 || tfim.value.length == 0 || tpass.value.length == 0) {
+        res.innerHTML = 'Impossível contar!'
+        window.alert('[ERRO] Faltam dados!')
+    } else {
+        res.innerHTML = 'Contando: <br>'
+        var n_ini = Number(tini.value)
+        var n_fim = Number(tfim.value)
+        var n_pass = Number(tpass.value)
+        if (n_pass <= 0) {
+            window.alert('Passo inválido! Considerando PASSO 1')
+            n_pass = 1
+        }
+
+        /* Usando o while
+        
+        var cont = n_ini
+        if (n_ini < n_fim) {
+            while (cont <= n_fim) {
+               res.innerHTML += `${cont} 👉 `
+               cont += n_pass
+            }
+        } else {
+            while (cont >= n_fim) {
+                res.innerHTML += `${cont} 👉 `
+                cont -= n_pass 
+            }
+        }
+        */
+
+        // Usando o for
+        if (n_ini < n_fim) {
+            for (var cont = n_ini; cont <= n_fim; cont += n_pass) {
+                res.innerHTML += ` ${cont} 👉`
+            }
+        } else {
+            for (var cont = n_ini; cont >= n_fim; cont -= n_pass) {
+                res.innerHTML += ` ${cont} 👉`
+            }
+        }
+
+        res.innerHTML += ` 🏁`
     }
 }

@@ -1,11 +1,11 @@
-function hello(name) {
+ function hello(name) {
     let welcome = `Bem-vindo ${name}!`
     write(welcome, 2);
 }
 
 function write(phrase, type) {
 
-    debugger;
+    // debugger;
 
     switch (type) {
         case 1:
