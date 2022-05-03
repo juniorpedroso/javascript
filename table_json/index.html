@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>working with json</title>
+</head>
+<body>
+    <h1 id="header">NOTHING HERE YET</h1>
+    <input type="button" value="NAME" onclick="myfunction()">
+
+    <input type="button" value="CLASS" onclick="myfunction1()">
+
+    <input type="button" value="ROLL NO" onclick="myfunction2()">
+
+    <script>
+        function myfunction(){
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if(xhttp.readyState==4 && xhttp.status==200){
+                    var data = JSON.parse(xhttp.responseText);
+                    document.getElementById("header").innerHTML = data.name;
+                } else {
+                    document.getElementById("header").innerHTML = "sorry connection error";
+                }
+            }
+            xhttp.open("GET", "data.json", true);
+            xhttp.send();
+        }
+        function myfunction1(){
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if(xhttp.readyState==4 && xhttp.status==200){
+                    var data = JSON.parse(xhttp.responseText);
+                    document.getElementById("header").innerHTML = data.class;
+                } else {
+                    document.getElementById("header").innerHTML = "sorry connection error";
+                }
+            }
+            xhttp.open("GET", "data.json", true);
+            xhttp.send();
+        }
+        function myfunction2(){
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if(xhttp.readyState==4 && xhttp.status==200){
+                    var data = JSON.parse(xhttp.responseText);
+                    document.getElementById("header").innerHTML = data.roll;
+                } else {
+                    document.getElementById("header").innerHTML = "sorry connection error";
+                }
+            }
+            xhttp.open("GET", "data.json", true);
+            xhttp.send();
+        }
+
+    </script>
+</body>
+</html>

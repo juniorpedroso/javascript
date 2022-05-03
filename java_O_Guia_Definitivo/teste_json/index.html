@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tabela JSON</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Dia</th>
+                <th>Delegado</th>
+                <th>Escrivão</th>
+                <th>Investigador</th>
+            </tr>
+            
+        </thead>
+        <tbody id="myTable">
+            <div id="dia"></div>
+            <div id="del"></div>
+            <div id="esc"></div>
+            <div id="inv"></div>
+        </tbody>
+
+    </table>
+    <script>
+        function getDados(){
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if(xhttp.readyState==4 && xhttp.status==200){
+                    var data = JSON.parse(xhttp.responseText);
+                    document.getElementById("dia").innerHTML = data.dia;
+                    document.getElementById("del").innerHTML = data.delpol;
+                    document.getElementById("esc").innerHTML = data.escripol;
+                    document.getElementById("inv").innerHTML = data.investipol;
+                } else {
+                    window.alert("ERRO de conexão");
+                }
+            }
+            xhttp.open("GET", "data.json", true);
+            xhttp.send()
+        }
+        getDados()
+    </script>
+</body>
+</html>
