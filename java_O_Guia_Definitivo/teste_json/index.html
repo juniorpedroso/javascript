@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Tabela JSON</h1>
@@ -19,31 +20,49 @@
             
         </thead>
         <tbody id="myTable">
-            <div id="dia"></div>
-            <div id="del"></div>
-            <div id="esc"></div>
-            <div id="inv"></div>
+           
         </tbody>
 
     </table>
     <script>
+
+        function buildTable(data) {
+            let table = document.getElementById("myTable")
+
+            for(var i = 0; i < data.length; i++) {
+                var row = `<tr> 
+                            <td>${data[i].dia}</td>
+                            <td>${data[i].delpol}</td>
+                            <td>${data[i].escripol}</td>
+                            <td>${data[i].investipol}</td>
+                    </tr>`
+                table.innerHTML += row
+            }
+            // var row = `<tr> 
+            //             <td>${data.dia}</td>
+            //             <td>${data.delpol}</td>
+            //             <td>${data.escripol}</td>
+            //             <td>${data.investipol}</td>
+            //     </tr>`
+            // table.innerHTML += row
+
+        }
+
         function getDados(){
             let xhttp = new XMLHttpRequest();
+            let url = "data.json"
             xhttp.onreadystatechange = function(){
-                if(xhttp.readyState==4 && xhttp.status==200){
-                    var data = JSON.parse(xhttp.responseText);
-                    document.getElementById("dia").innerHTML = data.dia;
-                    document.getElementById("del").innerHTML = data.delpol;
-                    document.getElementById("esc").innerHTML = data.escripol;
-                    document.getElementById("inv").innerHTML = data.investipol;
-                } else {
-                    window.alert("ERRO de conexão");
-                }
-            }
-            xhttp.open("GET", "data.json", true);
-            xhttp.send()
+                if(this.readyState == 4 && this.status == 200){
+                    var myArr = JSON.parse(this.responseText);
+                    buildTable(myArr);
+                } 
+            };
+            xhttp.open("GET", url, true);
+            xhttp.send();
         }
+
         getDados()
+
     </script>
 </body>
 </html>
