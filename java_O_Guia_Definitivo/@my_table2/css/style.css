@@ -1,5 +1,17 @@
 @charset "UTF-8";
 
+:root {
+    --cor0: #FFC58F;
+    --cor1: #FF9E42;
+    --cor2: #806347;
+    --cor3: #CC7E35;
+    --cor4: #804F21;
+    
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-open: 'Open Sans', sans-serif;
+    --fonte-destaque: 'Yanone Kaffeesatz', sans-serif;
+}
+
 body {
     padding: 0;
     margin: 0;
