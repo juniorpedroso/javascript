@@ -13,9 +13,10 @@
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    /* padding: 0;
+    margin: 0; */
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: var(--fonte-padrao)
 }
 
 h1 {
@@ -24,8 +25,11 @@ h1 {
 
 table {
     border-collapse: collapse;
-    width: 1000px;
+    width: 100%;
 }
+
+
+
 
 caption {
     padding: 10px;
@@ -38,4 +42,14 @@ td {
     border: 1px solid gray;
     padding: 10px;
     text-align: center;
+}
+
+col.c_sem {
+    background-color: #FF9E42;
+}
+col.c_del {
+    background-color: #ca9e7567;
+}
+col.c_del_n {
+    background-color: #b4aca562;
 }

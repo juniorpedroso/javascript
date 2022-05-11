@@ -8,19 +8,20 @@ function buildTable(data) {
         <td>${data[i].sdia}</td>
         <td>${data[i].delpol_d}</td>
         <td>${data[i].delapo_d}</td>
-                        <td>${data[i].esctit_d}</td>
-                        <td>${data[i].escsob_d}</td>
-                        <td>${data[i].opetit_d}</td>
-                        <td>${data[i].opesob_d}</td>
-                        <td>${data[i].delpol_n}</td>
-                        <td>${data[i].delapo_n}</td>
-                        <td>${data[i].esctit_n}</td>
-                        <td>${data[i].escsob_n}</td>
-                        <td>${data[i].ope1_n}</td>
-                        <td>${data[i].ope2_n}</td>
-                        <td>${data[i].opesob_n}</td>
-                        </tr>`
-                        table.innerHTML += row
+        <td>${data[i].esctit_d}</td>
+        <td>${data[i].escsob_d}</td>
+        <td>${data[i].opetit_d}</td>
+        <td>${data[i].opesob_d}</td>
+        
+        <td>${data[i].delpol_n}</td>
+        <td>${data[i].delapo_n}</td>
+        <td>${data[i].esctit_n}</td>
+        <td>${data[i].escsob_n}</td>
+        <td>${data[i].ope1_n}</td>
+        <td>${data[i].ope2_n}</td>
+        <td>${data[i].opesob_n}</td>
+        </tr>`
+        table.innerHTML += row
     }
 }
 
