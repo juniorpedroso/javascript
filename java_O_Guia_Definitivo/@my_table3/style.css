@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border: 2px solid yellowgreen;
+    border-collapse: collapse;
+    width: 700px;
+    margin: 50px auto;
+}
+
+th, td {
+    border: 1px solid gray;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+col.cDia, col.cSem {
+    background-color: aquamarine;
+}
+
+tr:nth-child(1) {
+    border-top: 2px solid black;
+}
